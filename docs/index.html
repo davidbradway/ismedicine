@@ -21,31 +21,27 @@
           </div>
         </a>
         <div class="overflow-hidden">
-          <h2 class="font-semibold" id="p1">Music</h2>
+          <h2 class="font-semibold" id="p1"></h2>
           <p class="truncate text-sm text-slate-500">is Medicine</p>
         </div>
       </div>
     </div>
     <script>
       function setText() {
+        const first = ["Music","Mud","Mom","March","March Madness","Mass","Mercury","Manitoba","Margaritaville","March","Maryland","Mark","Matthew","Maverick","Mercedes-Benz","Mercury","Messi","Messiah","Meta","Miami","Michigan","Microsoft","Midwest","Minnesota","Monday","Montana","Muhammed","Maestro","Magic","Mettle","Mercy","Method","Might","Machinery","Mail","Marriage","Market","Mass","Medication","Melody","Money","Madness","Magic","Magnetism","Magnification","Magnificence","Mahogany","Mainstream","Maintenance","Majesty","Makeup","Malevolence","Management","Maneuverability","Manhood","Mango","Manufacturing","Manure","Map","Maple","Mapping","Marathon","Marijuana","Marinade","Marketability","Marketing","Marketplace","Marksmanship","Marmalade","Marriage","Martini","Mascara","Masculinity","Masonry","Massage","Matchmaking","Math","Matter","Maturation","Maturity","Mayonnaise","Mayorship","Mealtime","Meat","Media","Medication","Medicine","Mediocrity","Meditation","Melodrama","Melody","Melting","Memory","Mercury","Mercy","Merging","Merit","Merriment","Metabolism","Metal","Metaphor","Meter","Method","Methodology","Midday","Might","Mildew","Mind","Ministry","Miracle","Misbehavior","Mischief","Misconception","Misfortune","Mission","Mist","Mistaking","Mistrust","Misunderstanding","Misuse","Mitigation","Moderation","Modernism","Modernization","Modesty","Moisture","Mom","Momentum","Monacle","Money","Monomer","Monotony","Mood","Moonlight","Morale","Morality","Morning","Morphology","Mortality","Motherhood","Motion","Motivation","Motive","Motto","Movement","Mud","Mulch","Multiplication","Murder","Muscle","Muse","Museum","Mushroom","Music","Mustache","Mustard","Mutiny","Mutton","Myrrh","Mythology"];
+        const urlParams = new URLSearchParams(window.location.search);
+        var noun;
         var p1 = document.getElementById("p1");
         var a = document.getElementById("l1");
-        const urlParams = new URLSearchParams(window.location.search);
+        var myUrlWithParams = new URL('https://davidbradway.github.io/ismedicine/');
         if (urlParams.has('noun')) {
-          const noun = urlParams.get('noun');
-          p1.innerHTML = noun;
-          const myUrlWithParams = new URL('https://davidbradway.github.io/ismedicine/');
-          myUrlWithParams.searchParams.append("noun", noun);
-          a.href = myUrlWithParams.href;
+          noun = urlParams.get('noun');
         } else {
-          var first = ["Music","Mud","Mom","March","March Madness","Mass","Mercury","Manitoba","Margaritaville","March","Maryland","Mark","Matthew","Maverick","Mercedes-Benz","Mercury","Messi","Messiah","Meta","Miami","Michigan","Microsoft","Midwest","Minnesota","Monday","Montana","Muhammed","Maestro","Magic","Mettle","Mercy","Method","Might","Machinery","Mail","Marriage","Market","Mass","Medication","Melody","Money","Madness","Magic","Magnetism","Magnification","Magnificence","Mahogany","Mainstream","Maintenance","Majesty","Makeup","Malevolence","Management","Maneuverability","Manhood","Mango","Manufacturing","Manure","Map","Maple","Mapping","Marathon","Marijuana","Marinade","Marketability","Marketing","Marketplace","Marksmanship","Marmalade","Marriage","Martini","Mascara","Masculinity","Masonry","Massage","Matchmaking","Math","Matter","Maturation","Maturity","Mayonnaise","Mayorship","Mealtime","Meat","Media","Medication","Medicine","Mediocrity","Meditation","Melodrama","Melody","Melting","Memory","Mercury","Mercy","Merging","Merit","Merriment","Metabolism","Metal","Metaphor","Meter","Method","Methodology","Midday","Might","Mildew","Mind","Ministry","Miracle","Misbehavior","Mischief","Misconception","Misfortune","Mission","Mist","Mistaking","Mistrust","Misunderstanding","Misuse","Mitigation","Moderation","Modernism","Modernization","Modesty","Moisture","Mom","Momentum","Monacle","Money","Monomer","Monotony","Mood","Moonlight","Morale","Morality","Morning","Morphology","Mortality","Motherhood","Motion","Motivation","Motive","Motto","Movement","Mud","Mulch","Multiplication","Murder","Muscle","Muse","Museum","Mushroom","Music","Mustache","Mustard","Mutiny","Mutton","Myrrh","Mythology"];
-          var p1 = document.getElementById("p1");
-          const noun = first[Math.floor(Math.random() * first.length)];
-          p1.innerHTML =  noun;
-          const myUrlWithParams = new URL('https://davidbradway.github.io/ismedicine/');
-          myUrlWithParams.searchParams.append("noun", noun);
-          a.href = myUrlWithParams.href            
+          noun = first[Math.floor(Math.random() * first.length)];
         }
+        p1.innerHTML = noun;
+        myUrlWithParams.searchParams.append("noun", noun);
+        a.href = myUrlWithParams.href;
       }
     </script>
   </body>
